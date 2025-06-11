@@ -1,0 +1,12 @@
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\bin\Debug\net8.0\BuildingManagement.Application.deps.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\bin\Debug\net8.0\BuildingManagement.Application.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\bin\Debug\net8.0\BuildingManagement.Application.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\obj\Debug\net8.0\BuildingManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\obj\Debug\net8.0\BuildingManagement.Application.AssemblyInfoInputs.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\obj\Debug\net8.0\BuildingManagement.Application.AssemblyInfo.cs
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\obj\Debug\net8.0\BuildingManagement.Application.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\obj\Debug\net8.0\BuildingManagement.Application.sourcelink.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\obj\Debug\net8.0\BuildingManagement.Application.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\obj\Debug\net8.0\refint\BuildingManagement.Application.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\obj\Debug\net8.0\BuildingManagement.Application.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Core\BuildingManagement.Application\obj\Debug\net8.0\ref\BuildingManagement.Application.dll

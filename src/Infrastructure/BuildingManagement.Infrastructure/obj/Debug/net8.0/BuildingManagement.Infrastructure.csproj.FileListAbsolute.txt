@@ -1,0 +1,12 @@
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\bin\Debug\net8.0\BuildingManagement.Infrastructure.deps.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\bin\Debug\net8.0\BuildingManagement.Infrastructure.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\bin\Debug\net8.0\BuildingManagement.Infrastructure.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\BuildingManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\BuildingManagement.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\BuildingManagement.Infrastructure.AssemblyInfo.cs
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\BuildingManagement.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\BuildingManagement.Infrastructure.sourcelink.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\BuildingManagement.Infrastructure.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\refint\BuildingManagement.Infrastructure.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\BuildingManagement.Infrastructure.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\ref\BuildingManagement.Infrastructure.dll
