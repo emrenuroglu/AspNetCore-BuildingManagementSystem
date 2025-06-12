@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.ApartmentController",
+    "Method": "CreateApartment",
+    "RelativePath": "api/Apartment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createApartmentCommandRequest",
+        "Type": "BuildingManagement.Application.Features.Commands.ApartmentCommands.CreateApartment.CreateApartmentCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.ApartmentController",
+    "Method": "GetAll",
+    "RelativePath": "api/Apartment/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

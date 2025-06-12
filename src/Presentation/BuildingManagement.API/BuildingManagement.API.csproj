@@ -19,8 +19,4 @@
     <ProjectReference Include="..\..\Infrastructure\BuildingManagement.Persistence\BuildingManagement.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

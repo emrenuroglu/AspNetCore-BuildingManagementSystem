@@ -1,3 +1,5 @@
+using BuildingManagement.Application;
+using BuildingManagement.Persistence;
 using BuildingManagement.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +11,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         x => x.MigrationsAssembly("BuildingManagement.Persistence")
     ));
 
+builder.Services.AddApplicationServices();
+builder.Services.AddPersistenceServices();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

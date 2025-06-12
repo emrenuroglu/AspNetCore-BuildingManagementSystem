@@ -16,3 +16,5 @@ C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManage
 C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\ref\BuildingManagement.Persistence.dll
 C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.runtimeconfig.json
 C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.genruntimeconfig.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Application.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Application.pdb
