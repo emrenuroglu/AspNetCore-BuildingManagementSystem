@@ -1,4 +1,5 @@
-﻿using BuildingManagement.Domain.Entities;
+﻿using BuildingManagement.Domain.Dtos;
+using BuildingManagement.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,6 @@ namespace BuildingManagement.Application.Features.Queries.ApartmentQueries.GetAl
 {
     public class GetAllApartmentQueryResponse
     {
-        public int TotalApartmentCount { get; set; }
-        public List<Apartment> Apartments { get; set; }
+        public List<ApartmentDto> Apartments { get; set; }
     }
 }

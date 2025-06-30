@@ -9,8 +9,8 @@ namespace BuildingManagement.Application.Features.Commands.ApartmentCommands.Cre
 {
     public class CreateApartmentCommandRequest : IRequest<CreateApartmentCommandResponse>
     {
-        public string Name { get; set; } = string.Empty;
-        public string Address { get; set; } = string.Empty;
-        public int TotalUnits { get; set; }
+        public string Number { get; set; }
+        public int Floor { get; set; }
+        public Guid BuildingId { get; set; }
     }
 }

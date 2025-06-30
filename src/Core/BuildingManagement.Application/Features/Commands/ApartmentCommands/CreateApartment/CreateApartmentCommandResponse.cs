@@ -8,6 +8,6 @@ namespace BuildingManagement.Application.Features.Commands.ApartmentCommands.Cre
 {
     public class CreateApartmentCommandResponse
     {
-        public string Message { get; set; } = string.Empty;
+        public string Message { get; set; }
     }
 }

@@ -9,7 +9,5 @@ namespace BuildingManagement.Application.Features.Queries.ApartmentQueries.GetAl
 {
     public class GetAllApartmentQueryRequest : IRequest<GetAllApartmentQueryResponse>
     {
-        public int Page { get; set; } = 0;
-        public int Size { get; set; } = 5;
     }
 }

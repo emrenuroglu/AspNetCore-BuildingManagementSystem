@@ -1,6 +1,4 @@
-﻿using BuildingManagement.Application.Extension;
-using BuildingManagement.Application.Repository.ApartmentRepository;
-using BuildingManagement.Domain.Entities;
+﻿using BuildingManagement.Application.Repository.ApartmentRepository;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -18,19 +16,20 @@ namespace BuildingManagement.Application.Features.Commands.ApartmentCommands.Cre
         {
             _writeApartmentRepository = writeApartmentRepository;
         }
-
-        public async Task<CreateApartmentCommandResponse> Handle(CreateApartmentCommandRequest request, CancellationToken cancellationToken)
+        public Task<CreateApartmentCommandResponse> Handle(CreateApartmentCommandRequest request, CancellationToken cancellationToken)
         {
-
-            var apartment = new Apartment
+            var apartment = new Domain.Entities.Apartment
             {
-                Name = request.Name,
-                Address = request.Address,
-                TotalUnits = request.TotalUnits
+                BuildingId = request.BuildingId,
+                Floor = request.Floor,
+                Number = request.Number
             };
             _writeApartmentRepository.Create(apartment);
-            _writeApartmentRepository.SaveChanges();
-            return apartment.ToCreateResponse();
+            _writeApartmentRepository.SaveChangesAsync();
+            return Task.FromResult(new CreateApartmentCommandResponse
+            {
+                Message = "Daire başarıyla oluşturuldu.",
+            });
         }
     }
 }

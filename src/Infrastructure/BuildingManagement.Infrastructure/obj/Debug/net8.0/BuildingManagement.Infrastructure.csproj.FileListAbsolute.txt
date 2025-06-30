@@ -10,3 +10,11 @@ C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManage
 C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\refint\BuildingManagement.Infrastructure.dll
 C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\BuildingManagement.Infrastructure.pdb
 C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\ref\BuildingManagement.Infrastructure.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\bin\Debug\net8.0\BuildingManagement.Application.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\bin\Debug\net8.0\BuildingManagement.Domain.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\bin\Debug\net8.0\BuildingManagement.Persistence.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\bin\Debug\net8.0\BuildingManagement.Persistence.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\bin\Debug\net8.0\BuildingManagement.Application.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\bin\Debug\net8.0\BuildingManagement.Domain.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\BuildingManagement.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Infrastructure\obj\Debug\net8.0\Building.E68EBD6A.Up2Date

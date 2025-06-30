@@ -10,10 +10,17 @@ namespace BuildingManagement.Domain.Entities
 {
     public class User : BaseEntity
     {
-        public string FullName { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string PasswordHash { get; set; } = string.Empty;
-        public UserRole Role { get; set; } = UserRole.Resident;
-        public ICollection<ApartmentUnitAssignment> ApartmentAssignments { get; set; } = new List<ApartmentUnitAssignment>();
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string TcKimlikNo { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string PasswordHash { get; set; }
+        public UserRole Role { get; set; }
+
+        public ICollection<ApartmentUser> ApartmentUsers { get; set; }
+        public ICollection<Tenancy> TenanciesAsTenant { get; set; }
+        public ICollection<Tenancy> TenanciesAsOwner { get; set; }
+
     }
 }

@@ -1,6 +1,8 @@
 ﻿using BuildingManagement.Application.Repository.ApartmentRepository;
+using BuildingManagement.Domain.Dtos;
 using BuildingManagement.Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,34 +13,32 @@ namespace BuildingManagement.Application.Features.Queries.ApartmentQueries.GetAl
 {
     public class GetAllApartmentQueryHandler : IRequestHandler<GetAllApartmentQueryRequest, GetAllApartmentQueryResponse>
     {
-        private readonly IReadApartmentRepository _readApartmentRepository;
+        private readonly IReadApartmentRepository _apartmentRepository;
 
-        public GetAllApartmentQueryHandler(IReadApartmentRepository readApartmentRepository)
+        public GetAllApartmentQueryHandler(IReadApartmentRepository apartmentRepository)
         {
-            _readApartmentRepository = readApartmentRepository;
+            _apartmentRepository = apartmentRepository;
         }
-        public Task<GetAllApartmentQueryResponse> Handle(GetAllApartmentQueryRequest request, CancellationToken cancellationToken)
+        public async Task<GetAllApartmentQueryResponse> Handle(GetAllApartmentQueryRequest request, CancellationToken cancellationToken)
         {
-            var totalApartmentCount = _readApartmentRepository.FindAll(false).Count();
-
-            var apartments = _readApartmentRepository.FindAll(false)
-                .Skip((request.Page - 1) * request.Size) // ✅ düzeltildi
-                .Take(request.Size)
-                .Select(a => new Apartment
+            var apartments = _apartmentRepository
+                .FindAll(false) // false => tracking kapalı
+                .Include(a => a.Building) // Building verisi lazım çünkü bina adını çekeceğiz
+                .Select(a => new ApartmentDto
                 {
                     Id = a.Id,
-                    Name = a.Name,
-                    Address = a.Address,
-                    CreatedDate = a.CreatedDate,
-                    TotalUnits = a.TotalUnits,   
+                    Number = a.Number,
+                    Floor = a.Floor,
+                    BuildingName = a.Building.Name,
+                    StartDate = a.StartDate,
                 })
                 .ToList();
 
-            return Task.FromResult(new GetAllApartmentQueryResponse
+            return new GetAllApartmentQueryResponse
             {
-                TotalApartmentCount = totalApartmentCount,
                 Apartments = apartments
-            });
+            };
+
         }
     }
 }

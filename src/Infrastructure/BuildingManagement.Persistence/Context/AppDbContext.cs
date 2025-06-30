@@ -16,17 +16,26 @@ namespace BuildingManagement.Persistence.Context
 
         public DbSet<User> Users => Set<User>();
         public DbSet<Apartment> Apartments => Set<Apartment>();
-        public DbSet<ApartmentUnit> ApartmentUnits => Set<ApartmentUnit>();
-        public DbSet<ApartmentUnitAssignment> ApartmentUnitAssignments => Set<ApartmentUnitAssignment>();
-        public DbSet<FeePlan> FeePlans => Set<FeePlan>();
-        public DbSet<DebtType> DebtTypes => Set<DebtType>();
-        public DbSet<PaymentDebt> PaymentDebts => Set<PaymentDebt>();
-        public DbSet<Announcement> Announcements => Set<Announcement>();
+        public DbSet<Building> Buildings => Set<Building>();
+        public DbSet<Tenancy> Tenancies => Set<Tenancy>();
+        public DbSet<ApartmentUser> ApartmentUsers => Set<ApartmentUser>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().Property(u => u.Role).HasConversion<string>();
-            modelBuilder.Entity<ApartmentUnitAssignment>().Property(a => a.Type).HasConversion<string>();
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Tenancy>()
+                .HasOne(t => t.Owner)
+                .WithMany(u => u.TenanciesAsOwner)
+                .HasForeignKey(t => t.OwnerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Tenancy>()
+                .HasOne(t => t.Tenant)
+                .WithMany(u => u.TenanciesAsTenant)
+                .HasForeignKey(t => t.TenantId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
+
     }
 }

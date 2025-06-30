@@ -22,7 +22,33 @@ namespace BuildingManagement.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.Announcement", b =>
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.Apartment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BuildingId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Floor")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Number")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BuildingId");
+
+                    b.ToTable("Apartments");
+                });
+
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.ApartmentUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,33 +57,36 @@ namespace BuildingManagement.Persistence.Migrations
                     b.Property<Guid>("ApartmentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("CreatedById")
+                    b.Property<Guid>("BuildingId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("PublishedAt")
+                    b.Property<bool>("IsOwner")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsTenant")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ApartmentId");
 
-                    b.HasIndex("CreatedById");
+                    b.HasIndex("BuildingId");
 
-                    b.ToTable("Announcements");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ApartmentUsers");
                 });
 
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.Apartment", b =>
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.Building", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,169 +96,61 @@ namespace BuildingManagement.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("BuildingNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TotalUnits")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Apartments");
-                });
-
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.ApartmentUnit", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ApartmentId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("Floor")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UnitNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApartmentId");
-
-                    b.ToTable("ApartmentUnits");
-                });
-
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.ApartmentUnitAssignment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TotalApartments")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("UnitId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("TotalCarSpaces")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("TotalFloors")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UnitId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ApartmentUnitAssignments");
+                    b.ToTable("Buildings");
                 });
 
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.DebtType", b =>
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.Tenancy", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DebtTypes");
-                });
-
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.FeePlan", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("ApartmentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CreatedById")
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("OwnerId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EffectiveFrom")
-                        .HasColumnType("datetime2");
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ApartmentId");
 
-                    b.HasIndex("CreatedById");
+                    b.HasIndex("OwnerId");
 
-                    b.ToTable("FeePlans");
-                });
+                    b.HasIndex("TenantId");
 
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.PaymentDebt", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("DebtTypeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DueDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsPaid")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("PaidDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("UnitId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DebtTypeId");
-
-                    b.HasIndex("UnitId");
-
-                    b.ToTable("PaymentDebts");
+                    b.ToTable("Tenancies");
                 });
 
             modelBuilder.Entity("BuildingManagement.Domain.Entities.User", b =>
@@ -238,14 +159,15 @@ namespace BuildingManagement.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -253,7 +175,17 @@ namespace BuildingManagement.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Role")
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TcKimlikNo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -262,108 +194,92 @@ namespace BuildingManagement.Persistence.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.Announcement", b =>
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.Apartment", b =>
                 {
-                    b.HasOne("BuildingManagement.Domain.Entities.Apartment", "Apartment")
-                        .WithMany()
-                        .HasForeignKey("ApartmentId")
+                    b.HasOne("BuildingManagement.Domain.Entities.Building", "Building")
+                        .WithMany("Apartments")
+                        .HasForeignKey("BuildingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BuildingManagement.Domain.Entities.User", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Apartment");
-
-                    b.Navigation("CreatedBy");
+                    b.Navigation("Building");
                 });
 
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.ApartmentUnit", b =>
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.ApartmentUser", b =>
                 {
                     b.HasOne("BuildingManagement.Domain.Entities.Apartment", "Apartment")
-                        .WithMany("Units")
+                        .WithMany("ApartmentUsers")
                         .HasForeignKey("ApartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Apartment");
-                });
-
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.ApartmentUnitAssignment", b =>
-                {
-                    b.HasOne("BuildingManagement.Domain.Entities.ApartmentUnit", "Unit")
-                        .WithMany("Assignments")
-                        .HasForeignKey("UnitId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("BuildingManagement.Domain.Entities.Building", "Building")
+                        .WithMany("ApartmentUsers")
+                        .HasForeignKey("BuildingId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("BuildingManagement.Domain.Entities.User", "User")
-                        .WithMany("ApartmentAssignments")
+                        .WithMany("ApartmentUsers")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Unit");
+                    b.Navigation("Apartment");
+
+                    b.Navigation("Building");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.FeePlan", b =>
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.Tenancy", b =>
                 {
                     b.HasOne("BuildingManagement.Domain.Entities.Apartment", "Apartment")
-                        .WithMany("FeePlans")
+                        .WithMany("Tenancies")
                         .HasForeignKey("ApartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BuildingManagement.Domain.Entities.User", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("BuildingManagement.Domain.Entities.User", "Owner")
+                        .WithMany("TenanciesAsOwner")
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("BuildingManagement.Domain.Entities.User", "Tenant")
+                        .WithMany("TenanciesAsTenant")
+                        .HasForeignKey("TenantId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Apartment");
 
-                    b.Navigation("CreatedBy");
-                });
+                    b.Navigation("Owner");
 
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.PaymentDebt", b =>
-                {
-                    b.HasOne("BuildingManagement.Domain.Entities.DebtType", "DebtType")
-                        .WithMany()
-                        .HasForeignKey("DebtTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BuildingManagement.Domain.Entities.ApartmentUnit", "Unit")
-                        .WithMany()
-                        .HasForeignKey("UnitId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DebtType");
-
-                    b.Navigation("Unit");
+                    b.Navigation("Tenant");
                 });
 
             modelBuilder.Entity("BuildingManagement.Domain.Entities.Apartment", b =>
                 {
-                    b.Navigation("FeePlans");
+                    b.Navigation("ApartmentUsers");
 
-                    b.Navigation("Units");
+                    b.Navigation("Tenancies");
                 });
 
-            modelBuilder.Entity("BuildingManagement.Domain.Entities.ApartmentUnit", b =>
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.Building", b =>
                 {
-                    b.Navigation("Assignments");
+                    b.Navigation("ApartmentUsers");
+
+                    b.Navigation("Apartments");
                 });
 
             modelBuilder.Entity("BuildingManagement.Domain.Entities.User", b =>
                 {
-                    b.Navigation("ApartmentAssignments");
+                    b.Navigation("ApartmentUsers");
+
+                    b.Navigation("TenanciesAsOwner");
+
+                    b.Navigation("TenanciesAsTenant");
                 });
 #pragma warning restore 612, 618
         }

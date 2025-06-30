@@ -29,9 +29,9 @@ namespace BuildingManagement.Persistence.Repositories
             _dbSet.Remove(entity);
         }
 
-        public void SaveChanges()
+        public async Task SaveChangesAsync()
         {
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         public void Update(T entity)

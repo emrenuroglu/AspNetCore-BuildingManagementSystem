@@ -9,7 +9,9 @@ namespace BuildingManagement.Domain.Enums
     public enum UserRole
     {
         Admin = 0,
-        Manager = 1,
-        Resident = 2
+        BinaSakini = 1,
+        BinaYoneticisi = 2,
+        Kapici = 3,
+        Denetleyici = 4
     }
 }

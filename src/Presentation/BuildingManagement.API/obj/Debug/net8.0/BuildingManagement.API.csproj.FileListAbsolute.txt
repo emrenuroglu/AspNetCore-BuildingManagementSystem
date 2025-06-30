@@ -175,3 +175,7 @@ C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManageme
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.API\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.API\bin\Debug\net8.0\BuildingManagement.Application.dll
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.API\bin\Debug\net8.0\BuildingManagement.Application.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.API\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

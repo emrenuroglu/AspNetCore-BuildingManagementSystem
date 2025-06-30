@@ -27,3 +27,8 @@ C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManageme
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.genruntimeconfig.cache
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\ref\BuildingManagement.UI.dll
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.sourcelink.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

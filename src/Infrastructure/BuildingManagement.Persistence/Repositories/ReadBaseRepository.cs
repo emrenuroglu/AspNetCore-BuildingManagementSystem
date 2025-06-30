@@ -33,5 +33,12 @@ namespace BuildingManagement.Persistence.Repositories
                 ? _context.Set<T>().Where(expression).SingleOrDefault()
                 : _context.Set<T>().Where(expression).AsNoTracking().SingleOrDefault();
         }
+
+        public async Task<T?> FindByConditionAsync(Expression<Func<T, bool>> expression, bool trackChanges)
+        {
+            return trackChanges
+                ? await _context.Set<T>().Where(expression).SingleOrDefaultAsync()
+                : await _context.Set<T>().Where(expression).AsNoTracking().SingleOrDefaultAsync();
+        }
     }
 }

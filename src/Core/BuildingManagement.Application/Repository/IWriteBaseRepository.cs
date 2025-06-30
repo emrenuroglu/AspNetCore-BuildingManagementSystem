@@ -11,6 +11,6 @@ namespace BuildingManagement.Application.Repository
         void Create(T entity);
         void Remove(T entity);
         void Update(T entity);
-        void SaveChanges();
+        Task SaveChangesAsync();
     }
 }

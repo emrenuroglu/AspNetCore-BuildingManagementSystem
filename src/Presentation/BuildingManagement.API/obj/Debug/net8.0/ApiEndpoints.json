@@ -8,7 +8,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "createApartmentCommandRequest",
+        "Name": "request",
         "Type": "BuildingManagement.Application.Features.Commands.ApartmentCommands.CreateApartment.CreateApartmentCommandRequest",
         "IsRequired": true
       }
@@ -17,8 +17,40 @@
   },
   {
     "ContainingType": "BuildingManagement.API.Controllers.ApartmentController",
+    "Method": "GetAllApartments",
+    "RelativePath": "api/Apartment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Queries.ApartmentQueries.GetAllApartment.GetAllApartmentQueryRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.BuildingController",
+    "Method": "CreateApartment",
+    "RelativePath": "api/Building",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Commands.ApartmentCommands.CreateApartment.CreateBuildingCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.BuildingController",
     "Method": "GetAll",
-    "RelativePath": "api/Apartment/all",
+    "RelativePath": "api/Building/all",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -32,6 +64,70 @@
         "Name": "Size",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.BuildingController",
+    "Method": "RemoveApartment",
+    "RelativePath": "api/Building/sil",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.BuildingController",
+    "Method": "GetById",
+    "RelativePath": "api/Building/\u015Fart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Queries.UserQueries.GetAllUsers.GetAllUserQueryRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.UserController",
+    "Method": "RegisterUser",
+    "RelativePath": "api/User/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Commands.UserCommands.CreateUser.CreateUserCommandRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

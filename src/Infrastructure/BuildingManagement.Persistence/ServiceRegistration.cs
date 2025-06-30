@@ -1,5 +1,10 @@
 ﻿using BuildingManagement.Application.Repository.ApartmentRepository;
+using BuildingManagement.Persistence.Context;
 using BuildingManagement.Persistence.Repositories.ApartmentRepository;
+using BuildingManagement.Persistence.Repositories.ApartmentUserRepository;
+using BuildingManagement.Persistence.Repositories.UserRepository;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -13,8 +18,29 @@ namespace BuildingManagement.Persistence
     {
         public static void AddPersistenceServices(this IServiceCollection collection)
         {
+            collection.AddScoped<IWriteBuildingRepository, BuildingWriteRepository>();
+            collection.AddScoped<IReadBuildingRepository, BuildingReadRepository>();
             collection.AddScoped<IWriteApartmentRepository, ApartmentWriteRepository>();
             collection.AddScoped<IReadApartmentRepository, ApartmentReadRepository>();
+            collection.AddScoped<IWriteApartmentUserRepository, ApartmentUserWriteRepository>();
+            collection.AddScoped<IReadApartmentUserRepository, ApartmentUserReadRepository>();
+            collection.AddScoped<IWriteUserRepository, UserWriteRepository>();
+            collection.AddScoped<IReadUserRepository, UserReadRepository>();
+
+        }
+
+        public static void ConfigureAndCheckMigration(this IApplicationBuilder app)
+        {
+            AppDbContext context = app
+                .ApplicationServices
+                .CreateScope()
+                .ServiceProvider
+                .GetRequiredService<AppDbContext>();
+
+            if (context.Database.GetPendingMigrations().Any())
+            {
+                context.Database.Migrate();
+            }
         }
     }
 }

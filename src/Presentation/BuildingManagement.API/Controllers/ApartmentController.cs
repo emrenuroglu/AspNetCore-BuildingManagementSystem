@@ -10,23 +10,23 @@ namespace BuildingManagement.API.Controllers
     [ApiController]
     public class ApartmentController : ControllerBase
     {
-       private readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
         public ApartmentController(IMediator mediator)
         {
             _mediator = mediator;
         }
         [HttpPost]
-        public async Task<IActionResult> CreateApartment([FromBody] CreateApartmentCommandRequest createApartmentCommandRequest)
+        public async Task<IActionResult> CreateApartment([FromBody] CreateApartmentCommandRequest request)
         {
-            var result = await _mediator.Send(createApartmentCommandRequest);
+            var result = await _mediator.Send(request);
             return Ok(result);
         }
-        [HttpGet("all")]
-        public async Task<IActionResult> GetAll([FromQuery] GetAllApartmentQueryRequest request)
+        [HttpGet]
+        public async Task<IActionResult> GetAllApartments([FromQuery] GetAllApartmentQueryRequest request)
         {
-            var response = await _mediator.Send(request);
-            return Ok(response);
+            var result = await _mediator.Send(request);
+            return Ok(result);
         }
     }
 }

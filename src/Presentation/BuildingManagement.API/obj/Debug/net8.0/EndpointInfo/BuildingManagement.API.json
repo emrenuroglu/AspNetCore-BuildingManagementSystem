@@ -34,12 +34,62 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/api/Apartment/all": {
+      },
       "get": {
         "tags": [
           "Apartment"
+        ],
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/GetAllApartmentQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Building": {
+      "post": {
+        "tags": [
+          "Building"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBuildingCommandRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBuildingCommandRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBuildingCommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Building/all": {
+      "get": {
+        "tags": [
+          "Building"
         ],
         "parameters": [
           {
@@ -65,6 +115,102 @@
           }
         }
       }
+    },
+    "/api/Building/şart": {
+      "get": {
+        "tags": [
+          "Building"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Building/sil": {
+      "delete": {
+        "tags": [
+          "Building"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserCommandRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserCommandRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserCommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/GetAllUserQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -72,7 +218,29 @@
       "CreateApartmentCommandRequest": {
         "type": "object",
         "properties": {
+          "number": {
+            "type": "string",
+            "nullable": true
+          },
+          "floor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "buildingId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateBuildingCommandRequest": {
+        "type": "object",
+        "properties": {
           "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingNo": {
             "type": "string",
             "nullable": true
           },
@@ -80,12 +248,72 @@
             "type": "string",
             "nullable": true
           },
-          "totalUnits": {
+          "totalFloors": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalApartments": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCarSpaces": {
             "type": "integer",
             "format": "int32"
           }
         },
         "additionalProperties": false
+      },
+      "CreateUserCommandRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "tcKimlikNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "passwordHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetAllApartmentQueryRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetAllUserQueryRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "UserRole": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
       }
     }
   }
