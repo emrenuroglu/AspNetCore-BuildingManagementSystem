@@ -1,15 +1,4 @@
-﻿using BuildingManagement.Application.Repository.ApartmentRepository;
-using BuildingManagement.Domain.Dtos;
-using BuildingManagement.Domain.Entities;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BuildingManagement.Application.Features.Queries.ApartmentQueries.GetAllApartment
+﻿namespace BuildingManagement.Application.Features.Queries.ApartmentQueries.GetAllApartment
 {
     public class GetAllApartmentQueryHandler : IRequestHandler<GetAllApartmentQueryRequest, GetAllApartmentQueryResponse>
     {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BuildingManagement.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d72d6403c2a3bf5a123cd2be3792d2badabc46dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43124c5da31c50b62b33c9f9310c2983d74f3e6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("BuildingManagement.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BuildingManagement.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

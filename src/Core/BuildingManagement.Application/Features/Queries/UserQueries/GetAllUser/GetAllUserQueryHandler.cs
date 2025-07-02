@@ -1,14 +1,4 @@
-﻿using BuildingManagement.Application.Repository.UserRepository;
-using BuildingManagement.Domain.Dtos;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BuildingManagement.Application.Features.Queries.UserQueries.GetAllUsers
+﻿namespace BuildingManagement.Application.Features.Queries.UserQueries.GetAllUsers
 {
     public class GetAllUserQueryHandler : IRequestHandler<GetAllUserQueryRequest, GetAllUserQueryResponse>
     {
@@ -31,6 +21,7 @@ namespace BuildingManagement.Application.Features.Queries.UserQueries.GetAllUser
                     LastName = u.LastName,
                     TcKimlikNo = u.TcKimlikNo,
                     PhoneNumber = u.PhoneNumber,
+                    PasswordHash = u.PasswordHash,
                     Email = u.Email,
                     RoleName = u.Role.ToString()
                 })

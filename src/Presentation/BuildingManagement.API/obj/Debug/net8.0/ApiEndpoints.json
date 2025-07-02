@@ -1,8 +1,24 @@
 [
   {
     "ContainingType": "BuildingManagement.API.Controllers.ApartmentController",
+    "Method": "GetAllApartments",
+    "RelativePath": "api/Apartment/all-apartments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Queries.ApartmentQueries.GetAllApartment.GetAllApartmentQueryRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.ApartmentController",
     "Method": "CreateApartment",
-    "RelativePath": "api/Apartment",
+    "RelativePath": "api/Apartment/create-apartment",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -16,17 +32,33 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BuildingManagement.API.Controllers.ApartmentController",
+    "ContainingType": "BuildingManagement.API.Controllers.ApartmentUserController",
     "Method": "GetAllApartments",
-    "RelativePath": "api/Apartment",
+    "RelativePath": "api/ApartmentUser/all-apartment-user",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "request",
-        "Type": "BuildingManagement.Application.Features.Queries.ApartmentQueries.GetAllApartment.GetAllApartmentQueryRequest",
+        "Type": "BuildingManagement.Application.Features.Queries.ApartmentUserQueries.GetAllApartment.GetAllApartmentUserQueryRequest",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.ApartmentUserController",
+    "Method": "CreateApartmentUser",
+    "RelativePath": "api/ApartmentUser/create-apartment-user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Commands.ApartmentUserCommands.CreateApartmentUser.CreateApartmentUserCommandRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -103,7 +135,7 @@
   {
     "ContainingType": "BuildingManagement.API.Controllers.UserController",
     "Method": "GetAllUsers",
-    "RelativePath": "api/User",
+    "RelativePath": "api/User/all",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -16,13 +16,13 @@ namespace BuildingManagement.API.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost]
+        [HttpPost("create-apartment")]
         public async Task<IActionResult> CreateApartment([FromBody] CreateApartmentCommandRequest request)
         {
             var result = await _mediator.Send(request);
             return Ok(result);
         }
-        [HttpGet]
+        [HttpGet("all-apartments")]
         public async Task<IActionResult> GetAllApartments([FromQuery] GetAllApartmentQueryRequest request)
         {
             var result = await _mediator.Send(request);

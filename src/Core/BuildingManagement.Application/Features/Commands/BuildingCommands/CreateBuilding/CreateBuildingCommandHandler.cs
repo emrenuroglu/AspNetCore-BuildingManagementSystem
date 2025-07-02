@@ -1,14 +1,4 @@
-﻿using BuildingManagement.Application.Extension;
-using BuildingManagement.Application.Repository.ApartmentRepository;
-using BuildingManagement.Domain.Entities;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BuildingManagement.Application.Features.Commands.ApartmentCommands.CreateApartment
+﻿namespace BuildingManagement.Application.Features.Commands.ApartmentCommands.CreateApartment
 {
     public class CreateBuildingCommandHandler : IRequestHandler<CreateBuildingCommandRequest, CreateBuildingCommandResponse>
     {

@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7E18B76-7665-4EBF-8495-643D7EB75BB0}|src\\Core\\BuildingManagement.Application\\BuildingManagement.Application.csproj|c:\\users\\yusuf\\source\\repos\\buildingmanagement\\src\\core\\buildingmanagement.application\\features\\queries\\userqueries\\getalluser\\getalluserqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7E18B76-7665-4EBF-8495-643D7EB75BB0}|src\\Core\\BuildingManagement.Application\\BuildingManagement.Application.csproj|solutionrelative:src\\core\\buildingmanagement.application\\features\\queries\\userqueries\\getalluser\\getalluserqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7E18B76-7665-4EBF-8495-643D7EB75BB0}|src\\Core\\BuildingManagement.Application\\BuildingManagement.Application.csproj|c:\\users\\yusuf\\source\\repos\\buildingmanagement\\src\\core\\buildingmanagement.application\\features\\queries\\apartmentuserqueries\\getallapartment\\getallapartmentuserqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7E18B76-7665-4EBF-8495-643D7EB75BB0}|src\\Core\\BuildingManagement.Application\\BuildingManagement.Application.csproj|solutionrelative:src\\core\\buildingmanagement.application\\features\\queries\\apartmentuserqueries\\getallapartment\\getallapartmentuserqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FB48523-4061-4F2C-8665-B2724518FF14}|src\\Core\\BuildingManagement.Domain\\BuildingManagement.Domain.csproj|c:\\users\\yusuf\\source\\repos\\buildingmanagement\\src\\core\\buildingmanagement.domain\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7FB48523-4061-4F2C-8665-B2724518FF14}|src\\Core\\BuildingManagement.Domain\\BuildingManagement.Domain.csproj|solutionrelative:src\\core\\buildingmanagement.domain\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BDBCDE69-E276-40B2-A8A2-DF208C64295D}|src\\Presentation\\BuildingManagement.API\\BuildingManagement.API.csproj|c:\\users\\yusuf\\source\\repos\\buildingmanagement\\src\\presentation\\buildingmanagement.api\\controllers\\apartmentusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDBCDE69-E276-40B2-A8A2-DF208C64295D}|src\\Presentation\\BuildingManagement.API\\BuildingManagement.API.csproj|solutionrelative:src\\presentation\\buildingmanagement.api\\controllers\\apartmentusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FB48523-4061-4F2C-8665-B2724518FF14}|src\\Core\\BuildingManagement.Domain\\BuildingManagement.Domain.csproj|c:\\users\\yusuf\\source\\repos\\buildingmanagement\\src\\core\\buildingmanagement.domain\\enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7FB48523-4061-4F2C-8665-B2724518FF14}|src\\Core\\BuildingManagement.Domain\\BuildingManagement.Domain.csproj|solutionrelative:src\\core\\buildingmanagement.domain\\enums\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDBCDE69-E276-40B2-A8A2-DF208C64295D}|src\\Presentation\\BuildingManagement.API\\BuildingManagement.API.csproj|c:\\users\\yusuf\\source\\repos\\buildingmanagement\\src\\presentation\\buildingmanagement.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDBCDE69-E276-40B2-A8A2-DF208C64295D}|src\\Presentation\\BuildingManagement.API\\BuildingManagement.API.csproj|solutionrelative:src\\presentation\\buildingmanagement.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7FB48523-4061-4F2C-8665-B2724518FF14}|src\\Core\\BuildingManagement.Domain\\BuildingManagement.Domain.csproj|c:\\users\\yusuf\\source\\repos\\buildingmanagement\\src\\core\\buildingmanagement.domain\\dtos\\apartmentuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FB48523-4061-4F2C-8665-B2724518FF14}|src\\Core\\BuildingManagement.Domain\\BuildingManagement.Domain.csproj|solutionrelative:src\\core\\buildingmanagement.domain\\dtos\\apartmentuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,22 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 10,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Presentation\\BuildingManagement.API\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "src\\Presentation\\BuildingManagement.API\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Presentation\\BuildingManagement.API\\Controllers\\UserController.cs",
-              "RelativeToolTip": "src\\Presentation\\BuildingManagement.API\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAIAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T09:01:24.8Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -81,40 +63,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserRole.cs",
-              "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Domain\\Enums\\UserRole.cs",
-              "RelativeDocumentMoniker": "src\\Core\\BuildingManagement.Domain\\Enums\\UserRole.cs",
-              "ToolTip": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Domain\\Enums\\UserRole.cs",
-              "RelativeToolTip": "src\\Core\\BuildingManagement.Domain\\Enums\\UserRole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Title": "ApartmentUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Domain\\Dtos\\ApartmentUserDto.cs",
+              "RelativeDocumentMoniker": "src\\Core\\BuildingManagement.Domain\\Dtos\\ApartmentUserDto.cs",
+              "ToolTip": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Domain\\Dtos\\ApartmentUserDto.cs",
+              "RelativeToolTip": "src\\Core\\BuildingManagement.Domain\\Dtos\\ApartmentUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T09:06:17.998Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Domain\\Dtos\\UserDto.cs",
-              "RelativeDocumentMoniker": "src\\Core\\BuildingManagement.Domain\\Dtos\\UserDto.cs",
-              "ToolTip": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Domain\\Dtos\\UserDto.cs",
-              "RelativeToolTip": "src\\Core\\BuildingManagement.Domain\\Dtos\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T09:02:34.497Z",
+              "WhenOpened": "2025-07-02T10:31:08.676Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GetAllUserQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Application\\Features\\Queries\\UserQueries\\GetAllUser\\GetAllUserQueryHandler.cs",
-              "RelativeDocumentMoniker": "src\\Core\\BuildingManagement.Application\\Features\\Queries\\UserQueries\\GetAllUser\\GetAllUserQueryHandler.cs",
-              "ToolTip": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Application\\Features\\Queries\\UserQueries\\GetAllUser\\GetAllUserQueryHandler.cs",
-              "RelativeToolTip": "src\\Core\\BuildingManagement.Application\\Features\\Queries\\UserQueries\\GetAllUser\\GetAllUserQueryHandler.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAkwBwAAAAeAAAAAAAAAA==",
+              "Title": "GetAllApartmentUserQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Application\\Features\\Queries\\ApartmentUserQueries\\GetAllApartment\\GetAllApartmentUserQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\Core\\BuildingManagement.Application\\Features\\Queries\\ApartmentUserQueries\\GetAllApartment\\GetAllApartmentUserQueryHandler.cs",
+              "ToolTip": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Application\\Features\\Queries\\ApartmentUserQueries\\GetAllApartment\\GetAllApartmentUserQueryHandler.cs",
+              "RelativeToolTip": "src\\Core\\BuildingManagement.Application\\Features\\Queries\\ApartmentUserQueries\\GetAllApartment\\GetAllApartmentUserQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T09:01:33.279Z",
+              "WhenOpened": "2025-07-02T10:27:30.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApartmentUserController.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Presentation\\BuildingManagement.API\\Controllers\\ApartmentUserController.cs",
+              "RelativeDocumentMoniker": "src\\Presentation\\BuildingManagement.API\\Controllers\\ApartmentUserController.cs",
+              "ToolTip": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Presentation\\BuildingManagement.API\\Controllers\\ApartmentUserController.cs",
+              "RelativeToolTip": "src\\Presentation\\BuildingManagement.API\\Controllers\\ApartmentUserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T10:26:11.835Z",
               "EditorCaption": ""
             }
           ]

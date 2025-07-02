@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Apartment": {
+    "/api/Apartment/create-apartment": {
       "post": {
         "tags": [
           "Apartment"
@@ -34,7 +34,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Apartment/all-apartments": {
       "get": {
         "tags": [
           "Apartment"
@@ -45,6 +47,58 @@
             "in": "query",
             "schema": {
               "$ref": "#/components/schemas/GetAllApartmentQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ApartmentUser/create-apartment-user": {
+      "post": {
+        "tags": [
+          "ApartmentUser"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateApartmentUserCommandRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateApartmentUserCommandRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateApartmentUserCommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ApartmentUser/all-apartment-user": {
+      "get": {
+        "tags": [
+          "ApartmentUser"
+        ],
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/GetAllApartmentUserQueryRequest"
             }
           }
         ],
@@ -191,7 +245,7 @@
         }
       }
     },
-    "/api/User": {
+    "/api/User/all": {
       "get": {
         "tags": [
           "User"
@@ -229,6 +283,26 @@
           "buildingId": {
             "type": "string",
             "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateApartmentUserCommandRequest": {
+        "type": "object",
+        "properties": {
+          "apartmentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "isOwner": {
+            "type": "boolean"
+          },
+          "isTenant": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -297,6 +371,10 @@
         "additionalProperties": false
       },
       "GetAllApartmentQueryRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetAllApartmentUserQueryRequest": {
         "type": "object",
         "additionalProperties": false
       },

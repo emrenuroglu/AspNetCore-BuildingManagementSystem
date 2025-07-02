@@ -23,7 +23,7 @@ namespace BuildingManagement.API.Controllers
             var result = await _mediator.Send(request);
             return Ok(result);
         }
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<IActionResult> GetAllUsers([FromQuery] GetAllUserQueryRequest request)
         {
             var result = await _mediator.Send(request);
