@@ -1,7 +1,9 @@
 ﻿using BuildingManagement.Application.Repository.ApartmentRepository;
+using BuildingManagement.Application.Repository.TenancyRepository;
 using BuildingManagement.Persistence.Context;
 using BuildingManagement.Persistence.Repositories.ApartmentRepository;
 using BuildingManagement.Persistence.Repositories.ApartmentUserRepository;
+using BuildingManagement.Persistence.Repositories.TenancyRepository;
 using BuildingManagement.Persistence.Repositories.UserRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -26,7 +28,8 @@ namespace BuildingManagement.Persistence
             collection.AddScoped<IReadApartmentUserRepository, ApartmentUserReadRepository>();
             collection.AddScoped<IWriteUserRepository, UserWriteRepository>();
             collection.AddScoped<IReadUserRepository, UserReadRepository>();
-
+            collection.AddScoped<IReadTenancyRepository, TenancyReadRepository>();
+            collection.AddScoped<IWriteTenancyRepository, TenancyWriteRepository>();
         }
 
         public static void ConfigureAndCheckMigration(this IApplicationBuilder app)

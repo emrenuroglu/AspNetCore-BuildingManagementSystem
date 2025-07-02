@@ -154,6 +154,54 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BuildingManagement.API.Controllers.TenancyController",
+    "Method": "GetAllTenancy",
+    "RelativePath": "api/Tenancy/all-Tenancy",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Queries.TenancyQueries.GetAllTenancies.GetAllTenancyQueryRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.TenancyController",
+    "Method": "CreateTenancy",
+    "RelativePath": "api/Tenancy/create-tenancy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Commands.TenancyCommands.CreateTenancy.CreateTenancyCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.TenancyController",
+    "Method": "UpdateTenancy",
+    "RelativePath": "api/Tenancy/update-tenancy",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Commands.TenancyCommands.UpdateTenancy.UpdateTenancyCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BuildingManagement.API.Controllers.UserController",
     "Method": "GetAllUsers",
     "RelativePath": "api/User/all",

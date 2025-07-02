@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G2Uee6FQpD8=",
+  "dgSpecHash": "dUcszsZaPAw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Core\\BuildingManagement.Domain\\BuildingManagement.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Muhammed Emre\\Documents\\GitHub\\AspNetCore-BuildingManagementSystem\\src\\Core\\BuildingManagement.Domain\\BuildingManagement.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

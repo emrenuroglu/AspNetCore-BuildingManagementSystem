@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Presentation\\BuildingManagement.UI\\BuildingManagement.UI.csproj": {}
+    "C:\\Users\\Muhammed Emre\\Documents\\GitHub\\AspNetCore-BuildingManagementSystem\\src\\Presentation\\BuildingManagement.UI\\BuildingManagement.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Presentation\\BuildingManagement.UI\\BuildingManagement.UI.csproj": {
+    "C:\\Users\\Muhammed Emre\\Documents\\GitHub\\AspNetCore-BuildingManagementSystem\\src\\Presentation\\BuildingManagement.UI\\BuildingManagement.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Presentation\\BuildingManagement.UI\\BuildingManagement.UI.csproj",
+        "projectUniqueName": "C:\\Users\\Muhammed Emre\\Documents\\GitHub\\AspNetCore-BuildingManagementSystem\\src\\Presentation\\BuildingManagement.UI\\BuildingManagement.UI.csproj",
         "projectName": "BuildingManagement.UI",
-        "projectPath": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Presentation\\BuildingManagement.UI\\BuildingManagement.UI.csproj",
-        "packagesPath": "C:\\Users\\yusuf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yusuf\\source\\repos\\BuildingManagement\\src\\Presentation\\BuildingManagement.UI\\obj\\",
+        "projectPath": "C:\\Users\\Muhammed Emre\\Documents\\GitHub\\AspNetCore-BuildingManagementSystem\\src\\Presentation\\BuildingManagement.UI\\BuildingManagement.UI.csproj",
+        "packagesPath": "C:\\Users\\Muhammed Emre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Muhammed Emre\\Documents\\GitHub\\AspNetCore-BuildingManagementSystem\\src\\Presentation\\BuildingManagement.UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\yusuf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Muhammed Emre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
