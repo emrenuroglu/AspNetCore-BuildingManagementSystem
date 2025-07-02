@@ -18,6 +18,7 @@
 
             var dtoList = apartmentUsers.Select(x => new ApartmentUserDto
             {
+                Id = x.Id,
                 UserFullName = $"{x.User.FirstName} {x.User.LastName}",
                 KatDaire = $"{x.Apartment.Floor}. Kat {x.Apartment.Number ?? "Bilinmiyor"} numarada",
                 BinaAdi = x.Apartment?.Building?.Name ?? "Bilinmiyor",

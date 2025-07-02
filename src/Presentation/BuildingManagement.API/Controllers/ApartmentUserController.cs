@@ -1,4 +1,5 @@
 ﻿using BuildingManagement.Application.Features.Commands.ApartmentUserCommands.CreateApartmentUser;
+using BuildingManagement.Application.Features.Commands.ApartmentUserCommands.UpdateApartmentUser;
 using BuildingManagement.Application.Features.Queries.ApartmentUserQueries.GetAllApartment;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -29,6 +30,15 @@ namespace BuildingManagement.API.Controllers
         {
             var result = await _mediator.Send(request);
             return Ok(result);
+        }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateApartmentUserCommandRequest request)
+        {
+            if (id != request.Id)
+                return BadRequest("URL'deki ID ile body'deki ID uyuşmuyor.");
+
+            var response = await _mediator.Send(request);
+            return Ok(response);
         }
     }
 }

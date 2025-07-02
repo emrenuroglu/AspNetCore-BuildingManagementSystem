@@ -23,7 +23,7 @@
             };
             _writeApartmentRepository.Create(building);
             await _writeApartmentRepository.SaveChangesAsync();
-            return building.ToCreateResponse();
+            return new CreateBuildingCommandResponse().ToCreateMessage(building.Id);
         }
     }
 }

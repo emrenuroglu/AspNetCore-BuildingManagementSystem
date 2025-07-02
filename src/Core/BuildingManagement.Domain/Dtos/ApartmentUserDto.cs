@@ -9,6 +9,7 @@ namespace BuildingManagement.Domain.Dtos
 {
     public class ApartmentUserDto
     {
+        public Guid Id { get; set; }
         public string UserFullName { get; set; }
         public string KatDaire { get; set; }
         public string BinaAdi { get; set; }

@@ -29,10 +29,8 @@
             await _writeApartmentRepository.SaveChangesAsync();
 
             // 4. Yanıt dön
-            return new RemoveBuildingCommandResponse
-            {
-                Message = $"Apartment with ID {request.Id} has been removed successfully."
-            };
+            return new RemoveBuildingCommandResponse().ToDeleteMessage(apartment.Id);
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace BuildingManagement.Application.Features.Commands.ApartmentUserCommands.CreateApartmentUser
+﻿using BuildingManagement.Domain.Entities;
+
+namespace BuildingManagement.Application.Features.Commands.ApartmentUserCommands.CreateApartmentUser
 {
     public class CreateApartmentUserCommandHandler : IRequestHandler<CreateApartmentUserCommandRequest, CreateApartmentUserCommandResponse>
     {
@@ -19,10 +21,7 @@
              _writeApartmentUserRepository.Create(apartmentUser);
             await _writeApartmentUserRepository.SaveChangesAsync();
 
-            return new CreateApartmentUserCommandResponse
-            {
-                Message = "Daire kullanıcısı başarıyla oluşturuldu.",
-            };
+            return new CreateApartmentUserCommandResponse().ToCreateMessage(apartmentUser.Id);
         }
     }
 }

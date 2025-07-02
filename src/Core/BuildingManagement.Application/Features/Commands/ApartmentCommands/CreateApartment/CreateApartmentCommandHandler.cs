@@ -18,10 +18,8 @@
             };
             _writeApartmentRepository.Create(apartment);
             _writeApartmentRepository.SaveChangesAsync();
-            return Task.FromResult(new CreateApartmentCommandResponse
-            {
-                Message = "Daire başarıyla oluşturuldu.",
-            });
+
+            return Task.FromResult(new CreateApartmentCommandResponse().ToCreateMessage(apartment.Id));
         }
     }
 }

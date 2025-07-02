@@ -33,6 +33,27 @@
   },
   {
     "ContainingType": "BuildingManagement.API.Controllers.ApartmentUserController",
+    "Method": "Update",
+    "RelativePath": "api/ApartmentUser/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Commands.ApartmentUserCommands.UpdateApartmentUser.UpdateApartmentUserCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.ApartmentUserController",
     "Method": "GetAllApartments",
     "RelativePath": "api/ApartmentUser/all-apartment-user",
     "HttpMethod": "GET",

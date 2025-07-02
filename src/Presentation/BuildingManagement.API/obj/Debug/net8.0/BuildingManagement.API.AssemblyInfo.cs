@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BuildingManagement.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43124c5da31c50b62b33c9f9310c2983d74f3e6e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0057b822224e56731898d0fba35419882d74a0bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("BuildingManagement.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BuildingManagement.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

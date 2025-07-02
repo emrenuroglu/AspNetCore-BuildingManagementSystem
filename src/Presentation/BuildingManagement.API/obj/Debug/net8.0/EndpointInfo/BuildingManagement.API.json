@@ -109,6 +109,48 @@
         }
       }
     },
+    "/api/ApartmentUser/{id}": {
+      "put": {
+        "tags": [
+          "ApartmentUser"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateApartmentUserCommandRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateApartmentUserCommandRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateApartmentUserCommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Building": {
       "post": {
         "tags": [
@@ -380,6 +422,35 @@
       },
       "GetAllUserQueryRequest": {
         "type": "object",
+        "additionalProperties": false
+      },
+      "UpdateApartmentUserCommandRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "apartmentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "isOwner": {
+            "type": "boolean"
+          },
+          "isTenant": {
+            "type": "boolean"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
         "additionalProperties": false
       },
       "UserRole": {

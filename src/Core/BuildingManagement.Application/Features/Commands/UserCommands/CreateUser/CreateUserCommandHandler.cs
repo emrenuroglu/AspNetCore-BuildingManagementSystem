@@ -1,4 +1,6 @@
-﻿namespace BuildingManagement.Application.Features.Commands.UserCommands.CreateUser
+﻿using BuildingManagement.Application.Extension;
+
+namespace BuildingManagement.Application.Features.Commands.UserCommands.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, CreateUserCommandResponse>
     {
@@ -21,10 +23,7 @@
             };
             _writeuserRepository.Create(user);
             _writeuserRepository.SaveChangesAsync();
-            return Task.FromResult(new CreateUserCommandResponse
-            {
-                Message = "User created successfully."
-            });
+            return Task.FromResult(new CreateUserCommandResponse().ToCreateMessage(user.Id));
         }
     }
 }
