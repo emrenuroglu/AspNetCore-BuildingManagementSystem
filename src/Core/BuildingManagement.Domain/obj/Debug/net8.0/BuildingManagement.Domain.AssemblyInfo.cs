@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BuildingManagement.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0057b822224e56731898d0fba35419882d74a0bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e251a5127f4e0b3d4fb2a8201cbe0f7118fe3668")]
 [assembly: System.Reflection.AssemblyProductAttribute("BuildingManagement.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BuildingManagement.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
