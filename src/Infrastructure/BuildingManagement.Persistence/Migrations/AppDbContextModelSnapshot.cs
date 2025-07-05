@@ -57,9 +57,6 @@ namespace BuildingManagement.Persistence.Migrations
                     b.Property<Guid>("ApartmentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("BuildingId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
 
@@ -78,8 +75,6 @@ namespace BuildingManagement.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ApartmentId");
-
-                    b.HasIndex("BuildingId");
 
                     b.HasIndex("UserId");
 
@@ -119,6 +114,36 @@ namespace BuildingManagement.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Buildings");
+                });
+
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.Debs", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("BuildingId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CreatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BuildingId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.ToTable("Debs");
                 });
 
             modelBuilder.Entity("BuildingManagement.Domain.Entities.Tenancy", b =>
@@ -210,26 +235,37 @@ namespace BuildingManagement.Persistence.Migrations
                     b.HasOne("BuildingManagement.Domain.Entities.Apartment", "Apartment")
                         .WithMany("ApartmentUsers")
                         .HasForeignKey("ApartmentId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("BuildingManagement.Domain.Entities.Building", "Building")
-                        .WithMany("ApartmentUsers")
-                        .HasForeignKey("BuildingId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BuildingManagement.Domain.Entities.User", "User")
                         .WithMany("ApartmentUsers")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Apartment");
 
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BuildingManagement.Domain.Entities.Debs", b =>
+                {
+                    b.HasOne("BuildingManagement.Domain.Entities.Building", "Building")
+                        .WithMany()
+                        .HasForeignKey("BuildingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BuildingManagement.Domain.Entities.User", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Building");
 
-                    b.Navigation("User");
+                    b.Navigation("CreatedBy");
                 });
 
             modelBuilder.Entity("BuildingManagement.Domain.Entities.Tenancy", b =>
@@ -268,8 +304,6 @@ namespace BuildingManagement.Persistence.Migrations
 
             modelBuilder.Entity("BuildingManagement.Domain.Entities.Building", b =>
                 {
-                    b.Navigation("ApartmentUsers");
-
                     b.Navigation("Apartments");
                 });
 

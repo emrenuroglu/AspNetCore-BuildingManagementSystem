@@ -10,9 +10,9 @@
         }
         public async Task<GetAllApartmentQueryResponse> Handle(GetAllApartmentQueryRequest request, CancellationToken cancellationToken)
         {
-            var apartments = _apartmentRepository
-                .FindAll(false) // false => tracking kapalı
-                .Include(a => a.Building) // Building verisi lazım çünkü bina adını çekeceğiz
+            var apartments = await _apartmentRepository
+                .FindAll(false)
+                .Include(a => a.Building)
                 .Select(a => new ApartmentDto
                 {
                     Id = a.Id,
@@ -21,7 +21,7 @@
                     BuildingName = a.Building.Name,
                     StartDate = a.StartDate,
                 })
-                .ToList();
+                .ToListAsync();
 
             return new GetAllApartmentQueryResponse
             {

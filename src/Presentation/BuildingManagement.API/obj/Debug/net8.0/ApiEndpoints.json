@@ -154,6 +154,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BuildingManagement.API.Controllers.DebsController",
+    "Method": "CreateDebs",
+    "RelativePath": "api/Debs/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Commands.DebsCommands.CreateDebs.CreateDebsCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.DebsController",
+    "Method": "GetAllDebs",
+    "RelativePath": "api/Debs/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Queries.DebsQueries.GetAllDebs.GetAllDebsQueryRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BuildingManagement.API.Controllers.TenancyController",
     "Method": "Update",
     "RelativePath": "api/Tenancy/{id}",

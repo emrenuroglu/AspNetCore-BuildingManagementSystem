@@ -7,6 +7,7 @@ C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManageme
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\bin\Debug\net8.0\BuildingManagement.UI.runtimeconfig.json
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\bin\Debug\net8.0\BuildingManagement.UI.dll
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\bin\Debug\net8.0\BuildingManagement.UI.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rpswa.dswa.cache.json
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.AssemblyInfoInputs.cache
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.AssemblyInfo.cs
@@ -14,6 +15,10 @@ C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManageme
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.RazorAssemblyInfo.cache
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.RazorAssemblyInfo.cs
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.sourcelink.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\scopedcss\bundle\BuildingManagement.UI.styles.css
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\scopedcss\projectbundle\BuildingManagement.UI.bundle.scp.css
@@ -26,9 +31,3 @@ C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManageme
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.pdb
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.genruntimeconfig.cache
 C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\ref\BuildingManagement.UI.dll
-C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\BuildingManagement.UI.sourcelink.json
-C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Users\yusuf\source\repos\BuildingManagement\src\Presentation\BuildingManagement.UI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

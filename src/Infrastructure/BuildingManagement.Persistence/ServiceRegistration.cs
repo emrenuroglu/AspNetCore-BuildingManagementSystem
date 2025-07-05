@@ -1,8 +1,10 @@
 ﻿using BuildingManagement.Application.Repository.ApartmentRepository;
+using BuildingManagement.Application.Repository.DebsRepository;
 using BuildingManagement.Application.Repository.TenancyRepository;
 using BuildingManagement.Persistence.Context;
 using BuildingManagement.Persistence.Repositories.ApartmentRepository;
 using BuildingManagement.Persistence.Repositories.ApartmentUserRepository;
+using BuildingManagement.Persistence.Repositories.DebsRepository;
 using BuildingManagement.Persistence.Repositories.TenancyRepository;
 using BuildingManagement.Persistence.Repositories.UserRepository;
 using Microsoft.AspNetCore.Builder;
@@ -30,20 +32,8 @@ namespace BuildingManagement.Persistence
             collection.AddScoped<IReadUserRepository, UserReadRepository>();
             collection.AddScoped<IReadTenancyRepository, TenancyReadRepository>();
             collection.AddScoped<IWriteTenancyRepository, TenancyWriteRepository>();
-        }
-
-        public static void ConfigureAndCheckMigration(this IApplicationBuilder app)
-        {
-            AppDbContext context = app
-                .ApplicationServices
-                .CreateScope()
-                .ServiceProvider
-                .GetRequiredService<AppDbContext>();
-
-            if (context.Database.GetPendingMigrations().Any())
-            {
-                context.Database.Migrate();
-            }
+            collection.AddScoped<IWriteDebsRepository, DebsWriteRepository>();
+            collection.AddScoped<IReadDebsRepository, DebsReadRepository>();
         }
     }
 }

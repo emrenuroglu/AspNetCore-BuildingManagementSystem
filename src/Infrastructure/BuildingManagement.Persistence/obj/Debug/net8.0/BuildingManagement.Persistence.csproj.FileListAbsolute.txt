@@ -1,23 +1,3 @@
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.deps.json
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.dll
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.pdb
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Domain.dll
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Domain.pdb
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.csproj.AssemblyReference.cache
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.AssemblyInfoInputs.cache
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.AssemblyInfo.cs
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.csproj.CoreCompileInputs.cache
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.sourcelink.json
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\Building.38DE75E5.Up2Date
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.dll
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\refint\BuildingManagement.Persistence.dll
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.pdb
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\ref\BuildingManagement.Persistence.dll
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.runtimeconfig.json
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.genruntimeconfig.cache
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Application.dll
-C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Application.pdb
 C:\Users\Muhammed Emre\Documents\GitHub\AspNetCore-BuildingManagementSystem\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.deps.json
 C:\Users\Muhammed Emre\Documents\GitHub\AspNetCore-BuildingManagementSystem\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.runtimeconfig.json
 C:\Users\Muhammed Emre\Documents\GitHub\AspNetCore-BuildingManagementSystem\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.dll
@@ -38,3 +18,23 @@ C:\Users\Muhammed Emre\Documents\GitHub\AspNetCore-BuildingManagementSystem\src\
 C:\Users\Muhammed Emre\Documents\GitHub\AspNetCore-BuildingManagementSystem\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.pdb
 C:\Users\Muhammed Emre\Documents\GitHub\AspNetCore-BuildingManagementSystem\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.genruntimeconfig.cache
 C:\Users\Muhammed Emre\Documents\GitHub\AspNetCore-BuildingManagementSystem\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\ref\BuildingManagement.Persistence.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.deps.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.runtimeconfig.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Persistence.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Application.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Domain.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Application.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\bin\Debug\net8.0\BuildingManagement.Domain.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.csproj.AssemblyReference.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.AssemblyInfoInputs.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.AssemblyInfo.cs
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.sourcelink.json
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\Building.38DE75E5.Up2Date
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\refint\BuildingManagement.Persistence.dll
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.pdb
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\BuildingManagement.Persistence.genruntimeconfig.cache
+C:\Users\yusuf\source\repos\BuildingManagement\src\Infrastructure\BuildingManagement.Persistence\obj\Debug\net8.0\ref\BuildingManagement.Persistence.dll

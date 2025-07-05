@@ -256,6 +256,58 @@
         }
       }
     },
+    "/api/Debs/Create": {
+      "post": {
+        "tags": [
+          "Debs"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDebsCommandRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDebsCommandRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDebsCommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Debs/GetAll": {
+      "get": {
+        "tags": [
+          "Debs"
+        ],
+        "parameters": [
+          {
+            "name": "request",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/GetAllDebsQueryRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Tenancy/create-tenancy": {
       "post": {
         "tags": [
@@ -504,6 +556,24 @@
         },
         "additionalProperties": false
       },
+      "CreateDebsCommandRequest": {
+        "type": "object",
+        "properties": {
+          "buildingId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdById": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateTenancyCommandRequest": {
         "type": "object",
         "properties": {
@@ -560,6 +630,10 @@
         "additionalProperties": false
       },
       "GetAllApartmentUserQueryRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetAllDebsQueryRequest": {
         "type": "object",
         "additionalProperties": false
       },

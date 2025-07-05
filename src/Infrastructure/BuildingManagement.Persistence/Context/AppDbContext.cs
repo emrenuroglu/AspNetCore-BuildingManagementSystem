@@ -19,6 +19,7 @@ namespace BuildingManagement.Persistence.Context
         public DbSet<Building> Buildings => Set<Building>();
         public DbSet<Tenancy> Tenancies => Set<Tenancy>();
         public DbSet<ApartmentUser> ApartmentUsers => Set<ApartmentUser>();
+        public DbSet<Debs> Debs => Set<Debs>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
