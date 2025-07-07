@@ -2,6 +2,6 @@
 {
     public class GetByIdBuildingQueryResponse
     {
-        public Building building { get; set; }
+        public Building Building { get; set; }
     }
 }

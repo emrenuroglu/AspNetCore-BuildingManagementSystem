@@ -1,13 +1,11 @@
-﻿using BuildingManagement.Domain.Entities;
-
-namespace BuildingManagement.Application.Features.Commands.ApartmentUserCommands.CreateApartmentUser
+﻿namespace BuildingManagement.Application.Features.Commands.ApartmentUserCommands.CreateApartmentUser
 {
     public class CreateApartmentUserCommandHandler : IRequestHandler<CreateApartmentUserCommandRequest, CreateApartmentUserCommandResponse>
     {
-        private readonly IWriteApartmentUserRepository _writeApartmentUserRepository;
-        public CreateApartmentUserCommandHandler(IWriteApartmentUserRepository writeApartmentUserRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public CreateApartmentUserCommandHandler(IUnitOfWork unitOfWork)
         {
-            _writeApartmentUserRepository = writeApartmentUserRepository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<CreateApartmentUserCommandResponse> Handle(CreateApartmentUserCommandRequest request, CancellationToken cancellationToken)
         {
@@ -18,8 +16,8 @@ namespace BuildingManagement.Application.Features.Commands.ApartmentUserCommands
                 IsOwner = request.IsOwner,
                 IsTenant = request.IsTenant
             };
-             _writeApartmentUserRepository.Create(apartmentUser);
-            await _writeApartmentUserRepository.SaveChangesAsync();
+            await _unitOfWork.Write<ApartmentUser>().CreateAsync(apartmentUser);
+            await _unitOfWork.SaveChangesAsync();
 
             return new CreateApartmentUserCommandResponse().ToCreateMessage(apartmentUser.Id);
         }

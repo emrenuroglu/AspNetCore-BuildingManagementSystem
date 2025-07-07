@@ -2,11 +2,11 @@
 {
     public class CreateBuildingCommandHandler : IRequestHandler<CreateBuildingCommandRequest, CreateBuildingCommandResponse>
     {
-        private readonly IWriteBuildingRepository _writeApartmentRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CreateBuildingCommandHandler(IWriteBuildingRepository writeApartmentRepository)
+        public CreateBuildingCommandHandler(IUnitOfWork unitOfWork)
         {
-            _writeApartmentRepository = writeApartmentRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<CreateBuildingCommandResponse> Handle(CreateBuildingCommandRequest request, CancellationToken cancellationToken)
@@ -21,8 +21,9 @@
                 TotalApartments = request.TotalApartments,
                 TotalCarSpaces = request.TotalCarSpaces
             };
-            _writeApartmentRepository.Create(building);
-            await _writeApartmentRepository.SaveChangesAsync();
+            await _unitOfWork.Write<Building>().CreateAsync(building);
+            await _unitOfWork.SaveChangesAsync();
+
             return new CreateBuildingCommandResponse().ToCreateMessage(building.Id);
         }
     }

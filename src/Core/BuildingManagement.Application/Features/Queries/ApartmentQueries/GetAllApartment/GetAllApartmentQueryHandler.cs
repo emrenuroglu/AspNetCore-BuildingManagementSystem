@@ -2,26 +2,25 @@
 {
     public class GetAllApartmentQueryHandler : IRequestHandler<GetAllApartmentQueryRequest, GetAllApartmentQueryResponse>
     {
-        private readonly IReadApartmentRepository _apartmentRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GetAllApartmentQueryHandler(IReadApartmentRepository apartmentRepository)
+        public GetAllApartmentQueryHandler(IUnitOfWork unitOfWork)
         {
-            _apartmentRepository = apartmentRepository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<GetAllApartmentQueryResponse> Handle(GetAllApartmentQueryRequest request, CancellationToken cancellationToken)
         {
-            var apartments = await _apartmentRepository
-                .FindAll(false)
-                .Include(a => a.Building)
-                .Select(a => new ApartmentDto
+            var apartments = await _unitOfWork.Read<Apartment>().SelectAsync(
+                a => new ApartmentDto
                 {
                     Id = a.Id,
                     Number = a.Number,
                     Floor = a.Floor,
                     BuildingName = a.Building.Name,
                     StartDate = a.StartDate,
-                })
-                .ToListAsync();
+                },
+                query => query.Include(a => a.Building)
+            );
 
             return new GetAllApartmentQueryResponse
             {

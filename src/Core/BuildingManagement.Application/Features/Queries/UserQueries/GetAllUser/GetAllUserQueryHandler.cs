@@ -2,35 +2,31 @@
 {
     public class GetAllUserQueryHandler : IRequestHandler<GetAllUserQueryRequest, GetAllUserQueryResponse>
     {
-        private readonly IReadUserRepository _readUserRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GetAllUserQueryHandler(IReadUserRepository readUserRepository)
+        public GetAllUserQueryHandler(IUnitOfWork unitOfWork)
         {
-            _readUserRepository = readUserRepository;
+            _unitOfWork = unitOfWork;
         }
 
-        public Task<GetAllUserQueryResponse> Handle(GetAllUserQueryRequest request, CancellationToken cancellationToken)
+        public async Task<GetAllUserQueryResponse> Handle(GetAllUserQueryRequest request, CancellationToken cancellationToken)
         {
-            var users = _readUserRepository
-                .FindAll(false)
-                .ToList() // önce veriyi çek
-                .Select(u => new UserDto
-                {
-                    Id = u.Id,
-                    FirstName = u.FirstName,
-                    LastName = u.LastName,
-                    TcKimlikNo = u.TcKimlikNo,
-                    PhoneNumber = u.PhoneNumber,
-                    PasswordHash = u.PasswordHash,
-                    Email = u.Email,
-                    RoleName = u.Role.ToString()
-                })
-                .ToList();
+            var users = await _unitOfWork.Read<User>().SelectAsync(u => new UserDto
+            {
+                Id = u.Id,
+                FirstName = u.FirstName,
+                LastName = u.LastName,
+                TcKimlikNo = u.TcKimlikNo,
+                PhoneNumber = u.PhoneNumber,
+                PasswordHash = u.PasswordHash,
+                Email = u.Email,
+                RoleName = u.Role.ToString()
+            });
 
-            return Task.FromResult(new GetAllUserQueryResponse
+            return new GetAllUserQueryResponse
             {
                 Users = users,
-            });
+            };
         }
     }
 }

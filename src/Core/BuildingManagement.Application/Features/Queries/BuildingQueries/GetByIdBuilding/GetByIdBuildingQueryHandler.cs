@@ -2,24 +2,24 @@
 {
     public class GetByIdBuildingQueryHandler : IRequestHandler<GetByIdBuildingQueryRequest, GetByIdBuildingQueryResponse>
     {
-        private readonly IReadBuildingRepository _readApartmentRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GetByIdBuildingQueryHandler(IReadBuildingRepository readApartmentRepository)
+        public GetByIdBuildingQueryHandler(IUnitOfWork unitOfWork)
         {
-            _readApartmentRepository = readApartmentRepository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<GetByIdBuildingQueryResponse> Handle(GetByIdBuildingQueryRequest request, CancellationToken cancellationToken)
         {
-            var apartment = _readApartmentRepository.FindByCondition(a => a.Id == request.Id, false);
+            var building = await _unitOfWork.Read<Building>().FindSingleAsync(b => b.Id == request.Id);
 
-            if (apartment == null)
+            if (building == null)
             {
                 throw new KeyNotFoundException($"Apartment with ID {request.Id} not found.");
             }
 
             return new GetByIdBuildingQueryResponse
             {
-                building = apartment
+                Building = building
             };
         }
     }

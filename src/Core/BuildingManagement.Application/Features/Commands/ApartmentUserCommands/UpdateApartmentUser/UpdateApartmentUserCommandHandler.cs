@@ -1,33 +1,18 @@
-﻿
-using BuildingManagement.Application.Features.Commands.ApartmentUserCommands.CreateApartmentUser;
-using BuildingManagement.Application.Repository.ApartmentRepository;
-using BuildingManagement.Application.Repository.ApartmentUserRepository;
-using BuildingManagement.Application.Repository.UserRepository;
-
-namespace BuildingManagement.Application.Features.Commands.ApartmentUserCommands.UpdateApartmentUser
+﻿namespace BuildingManagement.Application.Features.Commands.ApartmentUserCommands.UpdateApartmentUser
 {
     public class UpdateApartmentUserCommandHandler : IRequestHandler<UpdateApartmentUserCommandRequest, UpdateApartmentUserCommandResponse>
     {
-        private readonly IReadApartmentUserRepository _readApartmentUserRepository;
-        private readonly IWriteApartmentUserRepository _writeApartmentUserRepository;
-        private readonly IReadUserRepository _readUserRepository;
-        private readonly IReadApartmentRepository _readApartmentRepository;
-        public UpdateApartmentUserCommandHandler(
-        IReadApartmentUserRepository readApartmentUserRepository,
-        IWriteApartmentUserRepository writeApartmentUserRepository,
-        IReadUserRepository readUserRepository,
-        IReadApartmentRepository readApartmentRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public UpdateApartmentUserCommandHandler(IUnitOfWork unitOfWork)
         {
-            _readApartmentUserRepository = readApartmentUserRepository;
-            _writeApartmentUserRepository = writeApartmentUserRepository;
-            _readUserRepository = readUserRepository;
-            _readApartmentRepository = readApartmentRepository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<UpdateApartmentUserCommandResponse> Handle(UpdateApartmentUserCommandRequest request, CancellationToken cancellationToken)
         {
-            var apartmentUser = await _readApartmentUserRepository.FindByConditionAsync(x => x.Id == request.Id, false);
 
-            if (apartmentUser == null)
+            var apartmentUser = await _unitOfWork.Read<ApartmentUser>().FindSingleAsync(x => x.Id == request.Id);
+
+            if (apartmentUser is null)
             {
                 return new UpdateApartmentUserCommandResponse
                 {
@@ -35,10 +20,10 @@ namespace BuildingManagement.Application.Features.Commands.ApartmentUserCommands
                 };
             }
 
-            var user = await _readUserRepository.FindByConditionAsync(x => x.Id == request.UserId, false);
-            var apartment = await _readApartmentRepository.FindByConditionAsync(x => x.Id == request.ApartmentId, false);
+            var userExists = await _unitOfWork.Read<User>().ExistsAsync(x => x.Id == request.UserId);
+            var apartmentExists = await _unitOfWork.Read<Apartment>().ExistsAsync(x => x.Id == request.ApartmentId);
 
-            if (user == null || apartment == null)
+            if (!userExists || !apartmentExists)
             {
                 return new UpdateApartmentUserCommandResponse
                 {
@@ -52,8 +37,8 @@ namespace BuildingManagement.Application.Features.Commands.ApartmentUserCommands
             apartmentUser.IsTenant = request.IsTenant;
             apartmentUser.EndDate = request.EndDate;
 
-            _writeApartmentUserRepository.Update(apartmentUser);
-            await _writeApartmentUserRepository.SaveChangesAsync();
+            _unitOfWork.Write<ApartmentUser>().Update(apartmentUser);
+            await _unitOfWork.SaveChangesAsync();
 
             return new UpdateApartmentUserCommandResponse().ToUpdateMessage(apartmentUser.Id);
         }

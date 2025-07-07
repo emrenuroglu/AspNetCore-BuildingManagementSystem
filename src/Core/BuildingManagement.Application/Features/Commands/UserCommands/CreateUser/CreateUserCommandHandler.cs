@@ -1,15 +1,13 @@
-﻿using BuildingManagement.Application.Extension;
-
-namespace BuildingManagement.Application.Features.Commands.UserCommands.CreateUser
+﻿namespace BuildingManagement.Application.Features.Commands.UserCommands.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommandRequest, CreateUserCommandResponse>
     {
-        private readonly IWriteUserRepository _writeuserRepository;
-        public CreateUserCommandHandler(IWriteUserRepository writeuserRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public CreateUserCommandHandler(IUnitOfWork unitOfWork)
         {
-            _writeuserRepository = writeuserRepository;
+            _unitOfWork = unitOfWork;
         }
-        public Task<CreateUserCommandResponse> Handle(CreateUserCommandRequest request, CancellationToken cancellationToken)
+        public async Task<CreateUserCommandResponse> Handle(CreateUserCommandRequest request, CancellationToken cancellationToken)
         {
             var user = new User
             {
@@ -21,9 +19,10 @@ namespace BuildingManagement.Application.Features.Commands.UserCommands.CreateUs
                 PasswordHash = request.PasswordHash,
                 Role = request.Role
             };
-            _writeuserRepository.Create(user);
-            _writeuserRepository.SaveChangesAsync();
-            return Task.FromResult(new CreateUserCommandResponse().ToCreateMessage(user.Id));
+            await _unitOfWork.Write<User>().CreateAsync(user);
+            await _unitOfWork.SaveChangesAsync();
+
+            return new CreateUserCommandResponse().ToCreateMessage(user.Id);
         }
     }
 }

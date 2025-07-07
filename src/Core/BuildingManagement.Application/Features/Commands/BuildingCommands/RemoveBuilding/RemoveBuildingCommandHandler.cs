@@ -2,33 +2,24 @@
 {
     public class RemoveBuildingCommandHandler : IRequestHandler<RemoveBuildingCommandRequest, RemoveBuildingCommandResponse>
     {
+        private readonly IUnitOfWork _unitOfWork;
 
-        private readonly IWriteBuildingRepository _writeApartmentRepository;
-        private readonly IReadBuildingRepository _readApartmentRepository;
-
-        public RemoveBuildingCommandHandler(IWriteBuildingRepository writeApartmentRepository, IReadBuildingRepository readApartmentRepository)
+        public RemoveBuildingCommandHandler(IUnitOfWork unitOfWork)
         {
-            _writeApartmentRepository = writeApartmentRepository;
-            _readApartmentRepository = readApartmentRepository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<RemoveBuildingCommandResponse> Handle(RemoveBuildingCommandRequest request, CancellationToken cancellationToken)
         {
+            var apartment = await _unitOfWork.Read<Building>().FindSingleAsync(x => x.Id == request.Id);
 
-            var apartment = await _readApartmentRepository
-                .FindByConditionAsync(x => x.Id == request.Id, false);
-
-
-            // 2. Bulunamazsa hata fırlat
             if (apartment == null)
             {
                 throw new KeyNotFoundException($"Apartment with ID {request.Id} not found.");
             }
 
-            // 3. Sil
-            _writeApartmentRepository.Remove(apartment);
-            await _writeApartmentRepository.SaveChangesAsync();
+            _unitOfWork.Write<Building>().HardDelete(apartment);
+            await _unitOfWork.SaveChangesAsync();
 
-            // 4. Yanıt dön
             return new RemoveBuildingCommandResponse().ToDeleteMessage(apartment.Id);
 
         }

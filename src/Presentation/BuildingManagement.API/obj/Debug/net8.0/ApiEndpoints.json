@@ -109,13 +109,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Size",
-        "Type": "System.Int32",
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Queries.ApartmentQueries.GetAllApartment.GetAllBuildingQueryRequest",
         "IsRequired": false
       }
     ],
@@ -149,6 +144,27 @@
         "Name": "Id",
         "Type": "System.Guid",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BuildingManagement.API.Controllers.DebsController",
+    "Method": "Update",
+    "RelativePath": "api/Debs/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "BuildingManagement.Application.Features.Commands.DebsCommands.UpdateDebs.UpdateDebsCommandRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

@@ -2,24 +2,24 @@
 {
     public class CreateApartmentCommandHandler : IRequestHandler<CreateApartmentCommandRequest, CreateApartmentCommandResponse>
     {
-        private readonly IWriteApartmentRepository _writeApartmentRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CreateApartmentCommandHandler(IWriteApartmentRepository writeApartmentRepository)
+        public CreateApartmentCommandHandler(IUnitOfWork unitOfWork)
         {
-            _writeApartmentRepository = writeApartmentRepository;
+            _unitOfWork = unitOfWork;
         }
-        public Task<CreateApartmentCommandResponse> Handle(CreateApartmentCommandRequest request, CancellationToken cancellationToken)
+        public async Task<CreateApartmentCommandResponse> Handle(CreateApartmentCommandRequest request, CancellationToken cancellationToken)
         {
-            var apartment = new Domain.Entities.Apartment
+            var apartment = new Apartment
             {
                 BuildingId = request.BuildingId,
                 Floor = request.Floor,
                 Number = request.Number
             };
-            _writeApartmentRepository.Create(apartment);
-            _writeApartmentRepository.SaveChangesAsync();
+            await _unitOfWork.Write<Apartment>().CreateAsync(apartment);
+            await _unitOfWork.SaveChangesAsync();
 
-            return Task.FromResult(new CreateApartmentCommandResponse().ToCreateMessage(apartment.Id));
+            return new CreateApartmentCommandResponse().ToCreateMessage(apartment.Id);
         }
     }
 }

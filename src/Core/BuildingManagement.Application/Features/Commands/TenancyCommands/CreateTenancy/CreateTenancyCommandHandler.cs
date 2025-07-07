@@ -1,15 +1,12 @@
-﻿
-
-
-namespace BuildingManagement.Application.Features.Commands.TenancyCommands.CreateTenancy
+﻿namespace BuildingManagement.Application.Features.Commands.TenancyCommands.CreateTenancy
 {
     public class CreateTenancyCommandHandler : IRequestHandler<CreateTenancyCommandRequest, CreateTenancyCommandResponse>
     {
-        private readonly IWriteTenancyRepository _writeTenancyRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CreateTenancyCommandHandler(IWriteTenancyRepository writeTenancyRepository)
+        public CreateTenancyCommandHandler(IUnitOfWork unitOfWork)
         {
-            _writeTenancyRepository = writeTenancyRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<CreateTenancyCommandResponse> Handle(CreateTenancyCommandRequest request, CancellationToken cancellationToken)
@@ -19,11 +16,12 @@ namespace BuildingManagement.Application.Features.Commands.TenancyCommands.Creat
                 ApartmentId = request.ApartmentId,
                 TenantId = request.TenantId,
                 OwnerId = request.OwnerId,
-                
+
             };
 
-            _writeTenancyRepository.Create(tenancy);
-            await _writeTenancyRepository.SaveChangesAsync();
+            await _unitOfWork.Write<Tenancy>().CreateAsync(tenancy);
+            await _unitOfWork.SaveChangesAsync();
+
 
             return new CreateTenancyCommandResponse().ToCreateMessage(tenancy.Id);
         }

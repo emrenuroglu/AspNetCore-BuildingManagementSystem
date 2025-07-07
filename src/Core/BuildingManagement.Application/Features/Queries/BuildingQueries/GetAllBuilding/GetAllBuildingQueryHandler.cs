@@ -2,20 +2,18 @@
 {
     public class GetAllBuildingQueryHandler : IRequestHandler<GetAllBuildingQueryRequest, GetAllBuildingQueryResponse>
     {
-        private readonly IReadBuildingRepository _readApartmentRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GetAllBuildingQueryHandler(IReadBuildingRepository readApartmentRepository)
+        public GetAllBuildingQueryHandler(IUnitOfWork unitOfWork)
         {
-            _readApartmentRepository = readApartmentRepository;
+            _unitOfWork = unitOfWork;
         }
-        public Task<GetAllBuildingQueryResponse> Handle(GetAllBuildingQueryRequest request, CancellationToken cancellationToken)
+        public async Task<GetAllBuildingQueryResponse> Handle(GetAllBuildingQueryRequest request, CancellationToken cancellationToken)
         {
-            var totalApartmentCount = _readApartmentRepository.FindAll(false).Count();
+            var total = _unitOfWork.Read<Building>().CountAsync().Result;
 
-            var apartments = _readApartmentRepository.FindAll(false)
-                .Skip((request.Page - 1) * request.Size)
-                .Take(request.Size)
-                .Select(a => new Building
+            var buildings = await _unitOfWork.Read<Building>().SelectAsync(
+                a => new Building
                 {
                     Id = a.Id,
                     Name = a.Name,
@@ -24,14 +22,14 @@
                     TotalFloors = a.TotalFloors,
                     TotalApartments = a.TotalApartments,
                     TotalCarSpaces = a.TotalCarSpaces,
-                })
-                .ToList();
+                }
+            );
 
-            return Task.FromResult(new GetAllBuildingQueryResponse
+            return new GetAllBuildingQueryResponse
             {
-                TotalApartmentCount = totalApartmentCount,
-                Buildings = apartments
-            });
+                TotalBinaCount = total,
+                Buildings = buildings,
+            };
         }
     }
 }

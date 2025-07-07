@@ -2,7 +2,7 @@
 {
     public class GetAllBuildingQueryResponse
     {
-        public int TotalApartmentCount { get; set; }
+        public int TotalBinaCount { get; set; }
         public List<Building> Buildings { get; set; }
     }
 }

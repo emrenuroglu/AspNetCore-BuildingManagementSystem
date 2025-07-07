@@ -189,19 +189,10 @@
         ],
         "parameters": [
           {
-            "name": "Page",
+            "name": "request",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "Size",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
+              "$ref": "#/components/schemas/GetAllBuildingQueryRequest"
             }
           }
         ],
@@ -301,6 +292,48 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Debs/{id}": {
+      "put": {
+        "tags": [
+          "Debs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDebsCommandRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDebsCommandRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDebsCommandRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -633,6 +666,10 @@
         "type": "object",
         "additionalProperties": false
       },
+      "GetAllBuildingQueryRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
       "GetAllDebsQueryRequest": {
         "type": "object",
         "additionalProperties": false
@@ -670,6 +707,24 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDebsCommandRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdById": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false

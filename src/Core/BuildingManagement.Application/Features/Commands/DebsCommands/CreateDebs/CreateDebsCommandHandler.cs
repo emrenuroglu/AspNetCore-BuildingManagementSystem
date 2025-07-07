@@ -1,16 +1,12 @@
-﻿
-using BuildingManagement.Application.Repository.DebsRepository;
-
-namespace BuildingManagement.Application.Features.Commands.DebsCommands.CreateDebs
+﻿namespace BuildingManagement.Application.Features.Commands.DebsCommands.CreateDebs
 {
     public class CreateDebsCommandHandler : IRequestHandler<CreateDebsCommandRequest, CreateDebsCommandResponse>
     {
+        private readonly IUnitOfWork _unitOfWork;
 
-        private readonly IWriteDebsRepository _writeDebsRepository;
-
-        public CreateDebsCommandHandler(IWriteDebsRepository writeDebsRepository)
+        public CreateDebsCommandHandler(IUnitOfWork unitOfWork)
         {
-            _writeDebsRepository = writeDebsRepository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<CreateDebsCommandResponse> Handle(CreateDebsCommandRequest request, CancellationToken cancellationToken)
         {
@@ -20,8 +16,9 @@ namespace BuildingManagement.Application.Features.Commands.DebsCommands.CreateDe
                 Amount = request.Amount,
                 CreatedById = request.CreatedById,
             };
-            _writeDebsRepository.Create(debs);
-             await _writeDebsRepository.SaveChangesAsync();
+            await _unitOfWork.Write<Debs>().CreateAsync(debs);
+            await _unitOfWork.SaveChangesAsync();
+
             return new CreateDebsCommandResponse().ToCreateMessage(debs.Id);
         }
     }

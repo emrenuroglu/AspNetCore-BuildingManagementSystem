@@ -1,32 +1,18 @@
-﻿using BuildingManagement.Application.Repository.TenancyRepository;
-using BuildingManagement.Application.Repository.ApartmentRepository;
-using BuildingManagement.Application.Repository.UserRepository;
-using MediatR;
-
-namespace BuildingManagement.Application.Features.Commands.TenancyCommands.UpdateTenancy
+﻿namespace BuildingManagement.Application.Features.Commands.TenancyCommands.UpdateTenancy
 {
     public class UpdateTenancyCommandHandler : IRequestHandler<UpdateTenancyCommandRequest, UpdateTenancyCommandResponse>
     {
-        private readonly IReadTenancyRepository _readTenancyRepository;
-        private readonly IWriteTenancyRepository _writeTenancyRepository;
-        private readonly IReadUserRepository _readUserRepository;
-        private readonly IReadApartmentRepository _readApartmentRepository;
 
-        public UpdateTenancyCommandHandler(
-            IReadTenancyRepository readTenancyRepository,
-            IWriteTenancyRepository writeTenancyRepository,
-            IReadUserRepository readUserRepository,
-            IReadApartmentRepository readApartmentRepository)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public UpdateTenancyCommandHandler(IUnitOfWork unitOfWork)
         {
-            _readTenancyRepository = readTenancyRepository;
-            _writeTenancyRepository = writeTenancyRepository;
-            _readUserRepository = readUserRepository;
-            _readApartmentRepository = readApartmentRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<UpdateTenancyCommandResponse> Handle(UpdateTenancyCommandRequest request, CancellationToken cancellationToken)
         {
-            var tenancy = await _readTenancyRepository.FindByConditionAsync(x => x.Id == request.Id, false);
+            var tenancy = await _unitOfWork.Read<Tenancy>().FindSingleAsync(x => x.Id == request.Id);
             if (tenancy == null)
             {
                 return new UpdateTenancyCommandResponse
@@ -35,9 +21,9 @@ namespace BuildingManagement.Application.Features.Commands.TenancyCommands.Updat
                 };
             }
 
-            var tenant = await _readUserRepository.FindByConditionAsync(x => x.Id == request.TenantId, false);
-            var owner = await _readUserRepository.FindByConditionAsync(x => x.Id == request.OwnerId, false);
-            var apartment = await _readApartmentRepository.FindByConditionAsync(x => x.Id == request.ApartmentId, false);
+            var tenant = await _unitOfWork.Read<User>().FindSingleAsync(x => x.Id == request.TenantId);
+            var owner = await _unitOfWork.Read<User>().FindSingleAsync(x => x.Id == request.OwnerId);
+            var apartment = await _unitOfWork.Read<Apartment>().FindSingleAsync(x => x.Id == request.ApartmentId);
 
             if (tenant == null || owner == null || apartment == null)
             {
@@ -52,8 +38,8 @@ namespace BuildingManagement.Application.Features.Commands.TenancyCommands.Updat
             tenancy.ApartmentId = request.ApartmentId;
             tenancy.EndDate = request.EndDate;
 
-            _writeTenancyRepository.Update(tenancy);
-            await _writeTenancyRepository.SaveChangesAsync();
+            _unitOfWork.Write<Tenancy>().Update(tenancy);
+            await _unitOfWork.SaveChangesAsync();
 
             return new UpdateTenancyCommandResponse().ToUpdateMessage(tenancy.Id);
         }

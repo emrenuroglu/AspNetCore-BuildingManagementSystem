@@ -2,26 +2,29 @@
 {
     public class GetAllDebsQueryHandler : IRequestHandler<GetAllDebsQueryRequest, GetAllDebsQueryResponse>
     {
-        private readonly IReadDebsRepository _debsReadRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GetAllDebsQueryHandler(IReadDebsRepository debsReadRepository)
+        public GetAllDebsQueryHandler(IUnitOfWork unitOfWork)
         {
-            _debsReadRepository = debsReadRepository;
+            _unitOfWork = unitOfWork;
         }
         public async Task<GetAllDebsQueryResponse> Handle(GetAllDebsQueryRequest request, CancellationToken cancellationToken)
         {
-            var debs = await _debsReadRepository
-                .FindAll(false)
-                .Include(b => b.Building)
-                .Include(u => u.CreatedBy)
-                .Select(x => new DebsDto
+
+            var debs = await _unitOfWork.Read<Debs>()
+                .SelectAsync
+                (x => new DebsDto
                 {
+                    Id = x.Id,
                     BinaAdi = x.Building.Name,
                     Aidat = x.Amount,
                     StartDate = x.StartDate.ToShortDateString(),
                     OlusturanKisi = x.CreatedBy.FirstName + " " + x.CreatedBy.LastName
-                })
-                .ToListAsync();
+                },
+                query => query
+                .Include(b => b.Building)
+                .Include(u => u.CreatedBy)
+                );
 
             return new GetAllDebsQueryResponse
             {

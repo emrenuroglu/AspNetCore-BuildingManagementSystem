@@ -1,4 +1,6 @@
-﻿using BuildingManagement.Application.Features.Commands.DebsCommands.CreateDebs;
+﻿using BuildingManagement.Application.Features.Commands.ApartmentUserCommands.UpdateApartmentUser;
+using BuildingManagement.Application.Features.Commands.DebsCommands.CreateDebs;
+using BuildingManagement.Application.Features.Commands.DebsCommands.UpdateDebs;
 using BuildingManagement.Application.Features.Queries.DebsQueries.GetAllDebs;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -29,6 +31,16 @@ namespace BuildingManagement.API.Controllers
         {
             var result = await _mediator.Send(request);
             return Ok(result);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateDebsCommandRequest request)
+        {
+            if (id != request.Id)
+                return BadRequest("URL'deki ID ile body'deki ID uyuşmuyor.");
+
+            var response = await _mediator.Send(request);
+            return Ok(response);
         }
     }
 }
